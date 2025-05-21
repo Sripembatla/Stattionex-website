@@ -1,0 +1,44 @@
+.TextInput {
+    @apply mb-6;
+
+    label {
+        @apply block text-[14px] font-normal  text-[#1d2e36] mb-2;
+    }
+
+    input {
+        @apply block h-8 px-4 w-full font-normal tracking-tight text-secondary bg-[#f7f7f7] rounded-lg ;
+
+        &:disabled {
+            @apply bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed; // Change background, text color, and cursor style
+        }
+    }
+
+    .inputIcon {
+        @apply absolute inset-y-0 left-0 flex items-center cursor-pointer;
+    }
+
+    .passwordIcon {
+        @apply absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer;
+    }
+
+    .error-message {
+        @apply text-sm text-red-500 font-medium mt-2 max-w-sm;
+    }
+
+    &.input-gray {
+        input {
+            @label text-white bg-white-100;
+        }
+    }
+    .amount-input::-webkit-inner-spin-button, 
+    .amount-input::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+    
+    /* Remove spin buttons in Firefox */
+    .amount-input {
+      -moz-appearance: textfield; /* Firefox */
+      appearance: textfield;      /* Standard */
+    }
+}

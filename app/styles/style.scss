@@ -1,0 +1,140 @@
+@import "../styles/mixin";
+
+.Home {
+  // @apply bg-[#F4F4F5];
+
+  .HomeBanner {
+    @apply w-full relative mt-0 mb-1;
+
+    .banner_slider {
+      @apply w-full h-[477px];
+
+      .banner_content {
+        @apply w-full h-[100%] object-cover;
+
+        img {
+          @apply w-full object-fill h-[100%];
+        }
+
+        .description {
+          @apply max-w-[35rem] absolute top-[45%] left-[10%] z-10 transform -translate-y-1/2;
+
+          h1 {
+            @apply tracking-[0.5rem] text-white;
+
+            span {
+              @apply text-secondary font-bold leading-none -mb-2;
+            }
+          }
+
+          p {
+            @apply font-satisfy font-light tracking-[0.3rem] text-4xl mt-2 mb-10 text-white;
+          }
+
+          .shop_now {
+            @apply bg-transparent border-2 border-white px-12 py-3 text-2xl text-white mt-4 transition-all duration-300;
+
+            &:hover {
+              @apply bg-primary;
+            }
+          }
+        }
+      }
+
+      .swiper-pagination {
+        @apply bottom-10;
+      }
+
+      @include for-desktop {
+        @apply h-[50vh];
+
+        .banner_content {
+          @apply w-full h-[100%];
+
+          .description {
+            @apply max-w-[25rem];
+
+            h1 {
+              @apply text-5xl;
+            }
+
+            p {
+              @apply mt-2 text-3xl;
+            }
+          }
+        }
+      }
+
+      @include for-tablet {
+        @apply h-[500vh];
+
+        .banner_content {
+          @apply w-full h-[100%];
+
+          .description {
+            @apply max-w-[25rem];
+
+            h1 {
+              @apply text-5xl;
+            }
+
+            p {
+              @apply mt-2 text-3xl;
+            }
+          }
+        }
+      }
+
+      @include for-tablet {
+        @apply h-[55vh];
+
+        .banner_content {
+          @apply w-full h-[100%];
+
+          .description {
+            @apply max-w-[25rem];
+
+            h1 {
+              @apply text-5xl;
+            }
+
+            p {
+              @apply mt-3 mb-8 text-3xl;
+            }
+
+            .shop_now {
+              @apply mt-0 text-xl border;
+            }
+          }
+        }
+
+        .swiper-pagination {
+          @apply bottom-2;
+        }
+      }
+
+      @include for-phone {
+        @apply h-[20vh];
+
+        .banner_content {
+          .description {
+            @apply max-w-[13rem];
+
+            h1 {
+              @apply text-2xl mb-0 tracking-wider;
+            }
+
+            p {
+              @apply mt-0 mb-4 text-lg tracking-wide;
+            }
+
+            .shop_now {
+              @apply px-6 py-2 mt-0 text-sm border;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

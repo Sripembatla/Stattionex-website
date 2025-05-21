@@ -1,0 +1,90 @@
+.otp-container {
+  @apply flex h-screen;
+
+  // For mobile screens (up to 768px)
+  @media (max-width: 768px) {
+    @apply flex-col;
+  }
+
+  .otp-image {
+    @apply w-1/2 relative;
+
+    // Full width on mobile screens
+    @media (max-width: 768px) {
+      @apply w-full flex-col;
+    }
+
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+
+  .otp-form {
+    @apply w-1/2 flex justify-center items-center bg-gray-100;
+
+    // Full width and padding for mobile screens
+    @media (max-width: 768px) {
+      @apply w-full p-4;
+    }
+
+    .back-button {
+      @apply mb-4;
+    }
+
+    h2 {
+      @apply text-3xl font-bold mb-4;
+
+      // Smaller font size on mobile screens
+      @media (max-width: 768px) {
+        @apply text-2xl;
+      }
+    }
+
+    p {
+      @apply mb-6 text-gray-600;
+
+      // Smaller text on mobile screens
+      @media (max-width: 768px) {
+        @apply text-sm;
+      }
+    }
+
+    .otp-input-group {
+      @apply flex space-x-4 mb-6;
+
+      // On mobile screens, make inputs stack vertically
+      @media (max-width: 768px) {
+        @apply flex-col space-x-0 space-y-4;
+      }
+
+      .otp-input {
+        @apply border border-gray-300 text-2xl text-center rounded-md focus:outline-none;
+
+        // Adjust input size for mobile screens
+        @media (max-width: 768px) {
+          @apply w-full h-12 text-xl;
+        }
+
+        // Hide number input spinner
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          @apply appearance-none;
+          margin: 0;
+        }
+
+        &::-moz-appearance {
+          @apply appearance-none;
+        }
+      }
+    }
+
+    .btn-verify {
+      @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold h-12 w-full rounded-md;
+
+      // Adjust button height on mobile screens
+      @media (max-width: 768px) {
+        @apply h-10;
+      }
+    }
+  }
+}

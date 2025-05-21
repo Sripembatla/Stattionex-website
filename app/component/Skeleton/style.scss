@@ -1,0 +1,26 @@
+.skeleton-loader-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+  
+  .data-item {
+    text-align: center;
+  }
+  
+  .skeleton-loader-grid .react-loading-skeleton {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #f2f2f2, #e6e6e6, #f2f2f2);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }

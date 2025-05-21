@@ -1,0 +1,275 @@
+@import '../styles/mixin';
+
+.Forgot {
+  @apply relative min-h-screen bg-white flex justify-center items-center p-5;
+
+  .container {
+    @apply relative w-10/12 h-[110vh] bg-white overflow-hidden shadow-lg rounded overflow-y-auto;
+
+    .user {
+      @apply absolute top-0 left-0 w-full h-full flex;
+
+      .imgBx {
+        @apply relative w-1/2 h-full bg-transparent;
+        transition: 0.5s;
+
+        img {
+          @apply absolute top-0 left-0 w-full h-full object-cover;
+        }
+      }
+
+      .formBx {
+        @apply relative w-1/2 bg-[#F4F4F5] flex justify-center items-center p-10;
+        transition: 0.5s;
+
+        form {
+          @apply min-w-[75%];
+
+          .form-header {
+            @apply mb-4;
+            h2 {
+              @include h2;
+              @apply mb-1;
+            }
+
+            h4 {
+              @apply mb-2.5 text-[#A4A1AA] font-bold text-lg;
+            }
+
+          }
+
+          .TextInput {
+            label {
+              @apply mb-1 text-sm;
+            }
+
+            input {
+              @apply h-14;
+            }
+
+
+          }
+
+          .checkbox {
+            @apply flex justify-between;
+          }
+
+          .form-footer {
+            @apply items-center my-6 w-full;
+
+            .signup {
+              @include h4;
+              @apply text-center mt-6 font-normal;
+
+              .anchor-link {
+                @apply text-primary text-xl font-bold cursor-pointer underline;
+              }
+            }
+
+            .social-icon {
+              @apply flex gap-4 justify-center items-center;
+            }
+          }
+        }
+      }
+    }
+
+    .signupBx {
+      pointer-events: none;
+
+      .formBx {
+        left: 100%;
+      }
+
+      .imgBx {
+        left: -100%;
+      }
+    }
+
+    &.active {
+      .signupBx {
+        pointer-events: initial;
+
+        .formBx {
+          left: 0;
+        }
+
+        .imgBx {
+          left: 0;
+        }
+      }
+
+      .signinBx {
+        .formBx {
+          left: 100%;
+        }
+
+        .imgBx {
+          left: -100%;
+        }
+      }
+    }
+
+    .signinBx {
+      .formBx {
+        left: 0;
+      }
+
+      .imgBx {
+        left: 0;
+      }
+    }
+
+    @media (max-width: 991px) {
+      max-width: 90%;
+
+      .imgBx {
+        display: none;
+      }
+
+      .user .formBx {
+        width: 100%;
+      }
+    }
+  }
+
+  @include for-phone {
+    & {
+      @apply p-0 relative m-0;
+
+      .container {
+        @apply absolute top-0 right-0 left-0 bottom-0 p-0 m-0 min-w-full h-auto overflow-y-auto;
+
+        .user {
+          
+          .formBx {
+            @apply p-0;
+            form {
+               
+              @apply w-full mx-4 shadow-slate-400 shadow-2xl px-6 pb-4 pt-6;
+              .form-header {
+                h2 {
+                  @apply mb-0
+                }
+    
+                h4 {
+                  @apply mb-2.5 font-bold text-sm;
+                }
+    
+              }
+    
+              .TextInput {
+                label {
+                  @apply mb-1 text-xs;
+                }
+    
+                input {
+                  @apply h-10 py-0 text-xs px-2;
+                }
+    
+    
+              }
+              .checkbox {
+                @apply flex justify-between text-sm;
+
+                label{
+                  @apply text-sm;
+                }
+              }
+    
+              .form-footer {
+                @apply items-center mt-4 mb-0 w-full;
+      
+                .signup {
+                  @include h4;
+                  @apply text-center mt-2 font-normal mb-0;
+      
+                  .anchor-link {
+                    @apply text-primary text-xl font-bold cursor-pointer underline;
+                  }
+                }
+      
+                .social-icon {
+                  @apply flex gap-4 justify-center items-center;
+
+                  img{
+                    @apply w-6
+                  }
+
+
+                }
+              }
+            }
+          }
+        }
+
+        
+      }
+    }
+  }
+
+  @include for-desktop {
+    .container {
+      .user {
+        .formBx {
+          @apply p-0;
+          form {
+            .form-header {
+              h2 {
+                @apply mb-0
+              }
+  
+              h4 {
+                @apply mb-2.5 font-bold text-sm;
+              }
+            }
+  
+            .TextInput {
+              label {
+                @apply mb-1 text-xs;
+              }
+  
+              input {
+                @apply h-10 py-0 text-xs px-2;
+              }
+  
+  
+            }
+            .checkbox {
+              @apply flex justify-between text-sm;
+
+              label{
+                @apply text-sm;
+              }
+            }
+  
+            .form-footer {
+              @apply items-center mt-4 mb-0 w-full;
+    
+              .signup {
+                @include h4;
+                @apply text-center mt-2 font-normal mb-0;
+    
+                .anchor-link {
+                  @apply text-primary text-xl font-bold cursor-pointer underline;
+                }
+              }
+    
+              .social-icon {
+                @apply flex gap-4 justify-center items-center;
+
+                img{
+                  @apply w-6
+                }
+
+
+              }
+            }
+          }
+        }
+      }
+
+      
+    } 
+  }
+}

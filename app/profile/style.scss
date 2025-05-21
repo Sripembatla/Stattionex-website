@@ -1,0 +1,57 @@
+@import '../styles/mixin';
+
+.Profile {
+    @apply flex justify-center items-center h-auto;
+
+    .EditForm {
+        @apply max-w-screen-2xl p-10 text-sm bg-gray-50;
+
+        .form-header {
+            @apply flex justify-between items-center mb-6;
+
+            .profile-img {
+                @apply flex gap-2 items-center;
+            }
+
+            .image {
+                @apply bg-gray-400 rounded-full p-0;
+            }
+        }
+
+        .form-group {
+            @apply mb-6;
+
+            label {
+                @apply block mb-1 font-medium;
+            }
+
+            .form-control {
+                @apply w-full py-3 px-4 border-none bg-white rounded focus:outline-none;
+            }
+        }
+    }
+
+
+
+}
+
+.EditProfile {
+    form {
+        @apply p-5;
+
+        .TextInput {
+            label {
+                @apply text-sm;
+            }
+
+            input {
+                @apply text-sm h-10 border-none focus:outline-none pr-1;
+
+                &:disabled {
+                    @apply bg-gray-200 text-gray-500 cursor-not-allowed;
+                    border-color: #d1d5db; 
+                }
+            }
+        }
+    }
+}

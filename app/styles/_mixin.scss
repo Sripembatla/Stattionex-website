@@ -1,0 +1,126 @@
+@mixin for-phone {
+    @media (max-width: 640px) { 
+        @content;
+    }
+}
+@mixin for-tablet {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin for-desktop {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin for-big-desktop {
+    @media (max-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin h1{
+    @apply text-5xl font-bold mb-4;
+    @include for-desktop{
+        @apply text-4xl;
+    }
+    @include for-tablet{
+        @apply text-3xl;
+    }
+    @include for-phone{
+        @apply text-2xl mb-2;
+    }
+}
+
+@mixin h2{
+    @apply text-4xl font-bold mb-4;
+    @include for-desktop{
+        @apply text-3xl;
+    }
+    @include for-tablet{
+        @apply text-2xl;
+    }
+    @include for-phone{
+        @apply text-2xl mb-2;
+    }
+}
+
+@mixin h3{
+    @apply font-bold mb-4;
+    font-size: 1.5rem;
+    @include for-desktop{
+      font-size: 1.25rem;
+    }
+    @include for-tablet{
+        font-size:1.125rem;
+    }
+    @include for-phone{
+        @apply mb-2;
+        font-size: 1rem;
+    }
+}
+
+@mixin h4{
+    @apply text-2xl font-bold mb-4;
+    @include for-desktop{
+        @apply text-xl;
+    }
+    @include for-tablet{
+        @apply text-lg;
+    }
+    @include for-phone{
+        @apply text-md mb-2;
+    }
+}
+
+@mixin h4{
+    @apply text-xl font-semibold mb-4;
+    @include for-desktop{
+        @apply text-lg;
+    }
+    @include for-phone{
+        @apply text-sm mb-2;
+    }
+}
+
+
+.container{
+    max-width: 1720px;
+    @apply m-auto;
+
+
+    // @include for-big-desktop(){
+    //     padding: 0 5rem;
+    // }
+    // @include for-desktop(){
+    //     padding: 0 3rem;
+    // }
+    // @include for-tablet(){
+    //     padding: 0 2rem;
+    // }
+    // @include for-phone(){
+    //     padding: 0 1rem;
+    // }
+
+}
+
+
+// mixin.scss
+@mixin customScrollbar {
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #ebebeb;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #b0b0b0;
+    }
+}
+
+
+

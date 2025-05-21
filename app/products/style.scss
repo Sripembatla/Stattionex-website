@@ -1,0 +1,638 @@
+@import "../styles/mixin";
+// .productList{
+//     @apply bg[#F4F4F5]
+// }
+.c-outline {
+  outline: 2px solid #f3b960;
+  outline-offset: 0.8px;
+}
+.BottomHeader {
+  @apply  hidden w-full lg:h-20  lg:flex items-center z-10;
+
+  .container {
+    @apply flex justify-between px-4 items-center my-2;
+
+    .left {
+      @apply hidden lg:flex gap-16  items-start ;
+
+      .back {
+        @apply cursor-pointer;
+      }
+    }
+
+    .right {
+      @apply flex gap-10 items-center ;
+    }
+  }
+
+  @include for-tablet {
+    .container {
+      @apply block;
+
+      .left {
+        @apply justify-between;
+      }
+
+      .right {
+        @apply hidden;
+      }
+    }
+  }
+}
+
+.Products {
+  @apply p-5;
+
+  .product_details {
+    @apply mb-4 gap-x-4 bg-white;
+
+    .Sidebar {
+      @apply col-span-1 md:sticky md:top-0 md:h-screen md:overflow-y-auto;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .scrollable {
+      scrollbar-width: thin; /* For Firefox */
+      scrollbar-color: #f3b960 #f0f0f0; /* For Firefox */
+    }
+
+    .ProductList {
+      @apply col-span-4;
+    }
+  }
+
+  @include for-phone {
+    @apply pt-0;
+
+    .product_details {
+      @apply grid-cols-1 gap-0;
+
+      .Sidebar {
+        @apply col-span-1 text-right mb-4 z-50;
+      }
+    }
+  }
+
+  @include for-tablet {
+    @apply pt-0;
+
+    .product_details {
+      @apply flex-col;
+    }
+  }
+}
+
+.ProductDetails {
+  @apply w-full py-10 bg-white;
+
+  .container {
+    @apply px-2 md:px-4;
+    .content {
+      @apply lg:grid lg:grid-cols-12 lg:gap-8 relative overflow-visible;
+    
+      .product_image {
+        @apply col-span-7 flex flex-row-reverse gap-4;
+      }
+    
+      .product_gallery {
+        @apply w-10/12 h-[800px] relative border rounded-2xl;
+    
+        .swiper-slide {
+          img {
+            @apply object-fill;
+          }
+        }
+    
+        .swiper-button-next,
+        .swiper-button-prev {
+          @apply text-white rounded-full w-10 h-10;
+          background-color: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(10px);
+    
+          &::after {
+            font-size: 20px;
+            border-radius: 50%;
+            padding: 10px;
+          }
+        }
+      }
+    
+      .product_gallery_thumb {
+        @apply w-2/12 h-[800px] relative z-0 overflow-hidden;
+    
+        .swiper-slide {
+          img {
+            @apply mb-2 rounded-lg;
+          }
+        }
+      }
+    
+      .product_description {
+        @apply col-span-5 flex flex-col relative; /* Ensure it's positioned properly */
+        z-index: 10; /* Ensures it overlaps other elements if needed */
+        overflow: visible; /* Allows enlarged image to overflow */
+      }
+    }
+    
+    
+    
+    
+  }
+
+  @include for-big-desktop {
+    .container {
+      .content {
+        .product_image {
+          @apply col-span-6 gap-4;
+
+          .product_gallery {
+            @apply h-[600px];
+          }
+
+          .product_gallery_thumb {
+            @apply h-[600px];
+          }
+        }
+      }
+    }
+  }
+
+  @include for-desktop {
+    .container {
+      .content {
+        .product_image {
+          @apply col-span-6 flex flex-col gap-4;
+
+          .product_gallery {
+            @apply w-full h-auto;
+          }
+
+          .product_gallery_thumb {
+            @apply w-full h-52;
+          }
+        }
+      }
+    }
+  }
+
+  @include for-tablet {
+    .container {
+      .content {
+        .product_image {
+          @apply col-span-12 gap-4;
+
+          .product_gallery {
+            @apply w-full h-auto;
+          }
+
+          .product_gallery_thumb {
+            @apply h-24;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+  
+/* Ensure the cards are not stretched */
+// .product-ui-card {
+//   display: flex;
+//   justify-content: center; /* Center the content */
+//   align-items: center;
+//   // padding-bottom: 8px;
+//   width: 100%; /* Ensures the card width is responsive */
+//   max-width: 100%; /* Prevents stretching */
+//   box-sizing: border-box;
+//   flex-direction: column;
+//   cursor: pointer;
+// }
+
+// .product-item {
+//   display: flex;
+//   // justify-content: center;
+//   // align-items: center;
+//   text-align: left;
+//   // margin: 8px auto; /* Center the card */
+//   // padding: 8px;
+//   position: relative;
+//   max-width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+//   // transition: transform 0.3s ease-in-out; /* Smooth transition for zoom-in/out */
+//   // border-radius: 8px;
+//   // background-color: white;
+//   // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+//   flex-direction: column;
+//   cursor: pointer;
+// }
+
+// /* Zoom-in effect when hovered */
+// .product-item:hover {
+//   // transform: scale(1.05); /* Scale up by 5% */
+//   // background-color: white;
+//   // box-shadow: 0 9px 24px 0 rgba(38,39,59,.12);
+// }
+
+// .image-container {
+//   width: 100%;
+//   height: 350px;
+//   overflow: hidden;
+// }
+
+// .product-item img {
+//   width: 100%; /* Make images responsive */
+//   height: 100%;
+//   object-fit: fill; /* Prevent image stretching */
+//   // transition: transform 0.3s ease-in-out;
+//   // overflow: hidden;
+// }
+
+// /* Hover effect on image */
+// .product-item:hover img {
+//     transform: scale(1.1); /* Zoom the image in when hovered */
+//      transition : transform 0.3s ease-in
+// }
+
+.product-ui-card {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width of the container */
+  max-width: 320px; /* Set a reasonable max-width for the card */
+  box-sizing: border-box;
+  flex-direction: column;
+  cursor: pointer;
+  margin: 0 auto; /* Center the card horizontally */
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0);
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%; /* Make sure it stays within the card's bounds */
+  max-width: 100%; /* Prevent stretching */
+  height: auto; /* Allow height to adjust based on content */
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  // background-color: white;
+  // border-radius: 8px;
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add hover effect for desktop users */
+// .product-item:hover {
+//   transform: scale(1.03); /* Slight zoom effect on hover */
+//   // box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+// }
+
+.image-container {
+  width: 100%;
+  height: 310px; /* Define a base height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: #f7f7f7;
+  
+}
+
+.product-item img {
+  width: auto;
+  height: auto; /* Prevent image stretching while filling the container */
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-item:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+// /* Product details */
+// .product-item h3 {
+//   font-size: 14px;
+//   font-weight: 600;
+//   margin: 8px 0;
+//   color: #141842;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// }
+
+// .product-item p {
+//   font-size: 13px;
+//   color: #262626;
+//   margin: 4px 0;
+// }
+
+// /* Price styling */
+// .product-item .price {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   margin-top: 8px;
+// }
+
+// .product-item .price p {
+//   margin: 0;
+// }
+
+// .product-item .price .line-through {
+//   text-decoration: line-through;
+//   font-size: 12px;
+//   color: #757575;
+// }
+
+// /* Discount badge */
+// .product-item .discount-badge {
+//   position: absolute;
+//   top: 10px;
+//   left: 10px;
+//   background-color: #ff4d4d;
+//   color: white;
+//   padding: 4px 8px;
+//   font-size: 12px;
+//   font-weight: bold;
+//   border-radius: 12px;
+// }
+
+// /* Virtual Try-On Button */
+// .product-item .virtual-try-on {
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+//   width: 32px;
+//   height: 32px;
+//   background-color: #6c5ce7;
+//   color: white;
+//   border-radius: 50%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+// }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-ui-card {
+    max-width: 90%; /* Ensure the card doesn't stretch to the edges of small screens */
+  }
+
+  .image-container {
+    height: 250px; /* Adjust image height for smaller screens */
+  }
+
+  .product-item h3 {
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+
+  .product-item p {
+    font-size: 12px;
+  }
+
+  .product-item .discount-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}
+
+
+/* Responsive grid layout */
+.grid-product {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Responsive layout */
+  gap: 24px; /* Space between cards */
+}
+
+/* Media Queries for extra small screens */
+@media (max-width: 480px) {
+  .product-item {
+    width: 90%; /* Make card width smaller on small screens */
+    margin: 10px auto; /* Center the card */
+  }
+
+  // .product-ui-card {
+  // padding: 8px; /* Add some space around the cards */
+  // }
+}
+
+.product-item .ofs {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.product-item .ratting-show {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+.product-item .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.product-item .product-ui-card .pro-img {
+  position: relative;
+}
+
+.product-item .pro-img .product-grid-view_imageContainer__zZr_K {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-item .product-ui-card .fas.fa-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: red;
+}
+
+
+/* Shimmer animation styles */
+/* Keyframes for shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* General skeleton class with shimmer effect */
+.skeleton {
+  display: block;
+  // width: 100%;
+  // height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 10s infinite linear;
+}
+
+/* Skeleton for text elements */
+.skeleton-text {
+  height: 16px;
+  margin-bottom: 10px;
+}
+
+/* Skeleton for heading elements */
+.skeleton-heading {
+  height: 24px;
+  margin-bottom: 10px;
+}
+
+/* Skeleton for price element */
+.skeleton-price {
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+/* Skeleton for button */
+.skeleton-button {
+  height: 40px;
+  width: 100px;
+}
+ 
+.skeleton-box {
+  height: 40px;
+  width: 45px;
+}
+ 
+
+/* Skeleton for thumbnail image */
+.skeleton-thumb {
+  height: 80px; /* Adjust the height for thumbnail skeleton */
+}
+
+/* Skeleton for main product image */
+.skeleton-image {
+  height: 400px; /* Adjust the height for main image skeleton */
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablet screens (width <= 1024px) */
+@media (max-width: 1024px) {
+  .skeleton-image {
+    height: 300px; /* Adjust main image height for tablet screens */
+  }
+
+  .skeleton-thumb {
+    height: 60px; /* Adjust thumbnail height */
+  }
+
+  .skeleton-text {
+    width: 80%; /* Adjust text width */
+  }
+
+  .skeleton-heading {
+    width: 60%; /* Adjust heading width */
+  }
+
+  .skeleton-price {
+    width: 50%; /* Adjust price width */
+  }
+
+  .skeleton-button {
+    width: 120px; /* Adjust button width */
+  }
+}
+
+/* For mobile screens (width <= 768px) */
+@media (max-width: 768px) {
+  .skeleton-image {
+    height: 250px; /* Adjust main image height for small tablets or mobile */
+  }
+
+  .skeleton-thumb {
+    height: 50px; /* Adjust thumbnail height */
+  }
+
+  .skeleton-text {
+    width: 90%; /* Adjust text width */
+  }
+
+  .skeleton-heading {
+    width: 70%; /* Adjust heading width */
+  }
+
+  .skeleton-price {
+    width: 60%; /* Adjust price width */
+  }
+
+  .skeleton-button {
+    width: 150px; /* Adjust button width for mobile */
+  }
+}
+
+/* For very small mobile screens (width <= 480px) */
+@media (max-width: 480px) {
+  .skeleton-image {
+    height: 200px; /* Adjust main image height for very small screens */
+  }
+
+  .skeleton-thumb {
+    height: 40px; /* Adjust thumbnail height for small screens */
+  }
+
+  .skeleton-text {
+    width: 95%; /* Adjust text width */
+  }
+
+  .skeleton-heading {
+    width: 80%; /* Adjust heading width */
+  }
+
+  .skeleton-price {
+    width: 70%; /* Adjust price width */
+  }
+
+  .skeleton-button {
+    width: 100px; /* Adjust button width for smaller screens */
+  }
+}
+
+.Sidebar {
+  position: sticky;
+  top: 10px; /* Adjust as per your header height or spacing */
+  max-height: calc(100vh - 20px); /* Ensure the sidebar doesn't overflow viewport */
+  overflow-y: auto; /* Enable scrolling within the sidebar */
+  padding-right: 5px; /* Optional: To avoid scrollbar overlaying content */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+

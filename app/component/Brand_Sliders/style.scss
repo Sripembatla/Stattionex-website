@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Custom styles for Carousel component
+.carousel-container {
+  @apply relative overflow-hidden bg-secondary;
+  width: 100%;
+}
+.carousel-container {
+  .h1{
+    @apply text-white bg-secondary;
+  }
+}
+
+.carousel-track {
+  @apply flex;
+  animation: scroll 5s linear infinite; /* Adjust duration for speed */
+
+  @media (max-width: 768px) { /* Adjust for mobile screens */
+    animation: scroll 2s linear infinite; /* Faster scroll for mobile */
+  }
+ 
+}
+
+.slide {
+  @apply flex-shrink-0;
+  min-width: 300px; /* Adjusted for smaller images */
+  margin-right: 10px;
+}
+
+.carousel-image {
+  @apply object-cover w-48 h-24 rounded-lg; 
+}
+
+/* Infinite scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+// Review card styles
+.review-card {
+  @apply rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8;
+}
+
+.review-image {
+  @apply w-12 h-12 rounded-full object-cover; /* Adjusted size */
+}
+
+.star-icon {
+  @apply w-4 h-4; /* Adjusted size */
+}
+
+.fashionmate_reviews{
+  @apply text-white bg-secondary;
+}
+
+.carousel-review-track {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  overflow: hidden;
+
+  .review-card {
+    min-width: 300px;
+    max-width: 400px;
+    transition: transform 0.5s ease-in-out;
+    opacity: 0.5;
+    transform: scale(0.85);
+
+    &.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

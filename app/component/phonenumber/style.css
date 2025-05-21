@@ -1,0 +1,23 @@
+.form-control {
+    width: 250px;
+    height: 38px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .react-phone-input {
+    width: 250px !important;
+    height: 38px !important;
+  }
+  
+  .react-phone-input input {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+    outline: none;
+    padding-left: 40px; 
+    font-size: 14px;
+  }

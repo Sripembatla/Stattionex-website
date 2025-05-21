@@ -1,0 +1,74 @@
+
+// @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Nunito:wght@300;400;500;600;700;800;900;1000&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+/* Default font applied globally using the CSS variable */
+body {
+    font-family: "Poppins", sans-serif !important;
+    overflow-x: hidden;
+  }
+  
+  /* Use Satisfy for specific classes if needed */
+  .font-satisfy {
+    font-family: var(--font-satisfy), cursive;
+  }
+  
+.swiper>.swiper-button-prev,
+.swiper>.swiper-button-next {
+    @apply text-white rounded-full w-8 h-8 bg-white/50;
+    // background-color: rgba(0, 0, 0, 0.4);
+    // -webkit-backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
+
+    &::after {
+        font-size: 1rem;
+        border-radius: 50%;
+        padding: 0.6rem;
+    }
+}
+
+.swiper>.swiper-pagination>.swiper-pagination-bullet {
+    @apply w-3 h-3 bg-[#CBD5E1];
+    opacity: 1;
+}
+
+.swiper>.swiper-pagination>.swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: orange;
+}
+
+
+/* Default container style for screens larger than 1050px */
+// .container {
+//   width: 1920px;  /* Full width for all screen sizes */
+//   // max-width: 100%;  /* Fixed max-width */
+//   margin: 0 auto;  /* Center the container */
+//   // padding: 20px;  /* Optional padding */
+// }
+
+// /* For screens 1050px or below, keep the container 100% width */
+// @media (max-width: 1050px) {
+//   .container {
+//     width: 100%;  /* Ensure full width on small screens */
+//     max-width: none;  /* Remove the max-width restriction */
+//     margin: 0;  /* Remove centering, since it's already 100% */
+//   }
+// }
+
+button, input, optgroup, select, textarea {
+    font-family: "Poppins", sans-serif !important;
+}

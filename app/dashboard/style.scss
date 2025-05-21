@@ -1,0 +1,42 @@
+@import '../styles/mixin';
+
+.UserDashboard {
+    @apply bg-gray-100;
+    .container {
+        @apply max-w-[1720px] px-10 py-5 flex gap-x-8;
+
+        .sidebar {
+            @apply w-[18rem] ;
+
+            ul {
+                li {
+                    @apply flex items-center px-4 py-3 text-black rounded-lg cursor-pointer mb-2 font-medium;
+
+                    a {
+                        @apply flex items-center space-x-4;
+                    }
+                }
+
+                .active {
+                    @apply bg-primary text-white;
+
+                    img {
+                        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(180deg);
+                    }
+                }
+            }
+        }
+        .main-content {
+            @apply w-full;
+        }
+    }
+
+    @include for-desktop {
+        .container {
+            @apply px-4;
+            .sidebar {
+                @apply hidden;
+            }
+        }
+    }
+}

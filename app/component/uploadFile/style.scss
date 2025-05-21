@@ -1,0 +1,13 @@
+.UploadFile{
+    @apply mb-2;
+    label{
+        @apply block mb-1 text-gray-600 text-sm font-semibold;
+    }
+    input{
+        @apply block px-1 h-10 py-1 bg-white w-full text-black border border-gray-300 rounded-md cursor-pointer dark:text-gray-400 focus:outline-none dark:placeholder-gray-400;
+        &:focus{
+            @apply border border-primary;
+            box-shadow: none;
+        }
+    }
+}
